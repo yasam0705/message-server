@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "/proto";
+
+service MessageService {
+    rpc SendGroupChat(mes) returns (google.protobuf.Empty) {}
+    rpc SendChannel(mes) returns (google.protobuf.Empty) {}
+}
+
+message mes {
+    string text = 1;
+    string priority = 2;
+}
